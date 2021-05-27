@@ -1,0 +1,99 @@
+name: foxlearn_pos
+description: A new Flutter application.
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  firebase_messaging: ^9.1.1
+  firebase_core: ^1.0.3
+  fluttertoast: ^8.0.3
+  flutter_local_notifications: ^5.0.0+1
+  flutter_device_type: ^0.4.0
+  flutter_bloc: ^7.0.0
+  flutter_svg: ^0.21.0+1
+  flutter_neumorphic: ^3.1.0
+  font_awesome_flutter: ^9.0.0
+  shared_preferences: ^2.0.5
+  provider: ^5.0.0
+  percent_indicator: ^3.0.1
+  url_launcher: ^6.0.3
+  dio: ^4.0.0
+  qr_flutter: ^4.0.0
+  animated_text_kit: ^4.1.1
+  tuple: ^2.0.0
+  jwt_decoder: ^2.0.1
+  device_preview: ^0.7.1
+  simple_animations: ^3.0.3
+  sticky_headers: ^0.2.0
+  freezed_annotation: ^0.14.1
+  json_annotation: ^4.0.1
+  collection: ^1.15.0-nullsafety.4
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  json_serializable: ^4.1.0
+  build_runner: ^1.11.1
+  freezed: ^0.14.1+2
+  flutter_launcher_icons: ^0.9.0
+
+
+
+
+flutter:
+
+  uses-material-design: true
+
+
+  assets:
+    - assets/
+    - assets/svg/
+    - assets/icons/
+    - assets/logo/
+
+  fonts:
+    - family: sst-arabic
+      fonts:
+        - asset:  assets/fonts/sst-arabic-bold.ttf
+        - asset:  assets/fonts/sst-arabic-light.ttf
+        - asset:  assets/fonts/sst-arabic-medium.ttf
+        - asset:  assets/fonts/sst-arabic-roman.ttf
+
+
+    - family: Tanseek-Modern
+      fonts:
+        - asset:  assets/fonts/TanseekModernProArabic-Medium.ttf
+        - asset:  assets/fonts/TanseekModernProArabic-Light.ttf
+        - asset:  assets/fonts/TanseekModernProArabic-ExBold.ttf
+        - asset:  assets/fonts/TanseekModernProArabic-Bold.ttf
+        - asset:  assets/fonts/TanseekModernProArabic3.ttf
+
+    - family: MyIcons
+      fonts:
+        - asset: assets/fonts/MyIcons.ttf
+
+    - family: icomoon
+      fonts:
+        - asset: assets/fonts/IcoMoon.ttf
+
+    - family:  SocialMediaIcons
+      fonts:
+        - asset: assets/fonts/SocialMediaIcons.ttf
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "dev_assets/logo.png"
+  adaptive_icon_background: "#4DAEE2"
+  adaptive_icon_foreground: "dev_assets/adaptive_logo.png"

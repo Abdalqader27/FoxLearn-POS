@@ -1,0 +1,7 @@
+<svg data-name="Iconly/Bulk/Arrow - Left Circle" height="24" id="Iconly_Bulk_Arrow_-_Left_Circle" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <g data-name="Arrow - Left Circle" id="Arrow_-_Left_Circle" transform="translate(22 2) rotate(90)">
+        <path d="M20,10A10,10,0,1,1,10,0,10.011,10.011,0,0,1,20,10" data-name="Fill 1" fill="#fff" id="Fill_1" opacity="0.4" />
+        <path d="M8.443.749a.747.747,0,0,1-.219.529L4.754,4.765a.752.752,0,0,1-1.063,0L.219,1.278A.75.75,0,0,1,1.282.22l2.94,2.953L7.162.22A.75.75,0,0,1,8.443.749" data-name="Fill 4" fill="#fff"
+            id="Fill_4" transform="translate(5.778 7.808)" />
+    </g>
+</svg>

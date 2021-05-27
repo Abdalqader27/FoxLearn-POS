@@ -1,0 +1,9 @@
+<svg data-name="Iconly/Bulk/Upload" height="27.427" id="Iconly_Bulk_Upload" viewBox="0 0 27.427 27.427" width="27.427" xmlns="http://www.w3.org/2000/svg">
+    <g id="Upload" transform="translate(2.286 2.286)">
+        <path d="M0,5.082A5.134,5.134,0,0,1,5.171,0H10.84A5.121,5.121,0,0,1,16,5.071v12.7a5.133,5.133,0,0,1-5.172,5.082H5.16A5.121,5.121,0,0,1,0,17.785V5.082Z" data-name="Fill 1" fill="#200e32"
+            id="Fill_1" opacity="0.4" transform="translate(0 22.856) rotate(-90)" />
+        <path d="M14.834,3.581,11.582.257a.841.841,0,0,0-1.212,0,.9.9,0,0,0,0,1.244l1.782,1.82H.857a.88.88,0,0,0,0,1.76h11.3L10.372,6.9a.9.9,0,0,0,0,1.244.84.84,0,0,0,1.212,0l3.252-3.323a.9.9,0,0,0,0-1.247" data-name="Fill 3"
+            fill="#200e32"
+            id="Fill_3" transform="translate(7.224 15.086) rotate(-90)" />
+    </g>
+</svg>

@@ -1,0 +1,6 @@
+<svg data-name="Iconly/Bulk/Profile" height="24" id="Iconly_Bulk_Profile" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <g id="Profile" transform="translate(4 2)">
+        <path d="M8,0C3.684,0,0,.68,0,3.4S3.661,6.825,8,6.825c4.313,0,8-.679,8-3.4S12.334,0,8,0" data-name="Fill 1" fill="#200e32" id="Fill_1" transform="translate(0 13.175)" />
+        <path d="M5.292,10.584A5.292,5.292,0,1,0,0,5.292a5.273,5.273,0,0,0,5.292,5.292" data-name="Fill 4" fill="#200e32" id="Fill_4" opacity="0.4" transform="translate(2.705)" />
+    </g>
+</svg>

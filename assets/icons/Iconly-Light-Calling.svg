@@ -1,0 +1,11 @@
+<svg data-name="Iconly/Light/Calling" height="24" id="Iconly_Light_Calling" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <g id="Calling" transform="translate(2 2)">
+        <path d="M.49,2.374C.806,1.849,2.55-.056,3.793,0A1.642,1.642,0,0,1,4.76.518h0a16.884,16.884,0,0,1,2.467,3.34C7.472,5.026,6.078,5.7,6.5,6.878a9.873,9.873,0,0,0,5.619,5.616c1.177.427,1.851-.965,3.019-.723a16.864,16.864,0,0,1,3.34,2.468h0a1.639,1.639,0,0,1,.517.967c.046,1.309-1.977,3.077-2.371,3.3-.93.666-2.144.654-3.624-.034C8.874,16.757,2.274,10.282.524,6-.146,4.525-.191,3.3.49,2.374Z" data-name="Stroke 1"
+            fill="none"
+            id="Stroke_1" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" transform="translate(0.5 0.5)" />
+        <path d="M0,0A7.971,7.971,0,0,1,7.041,7.032" fill="none" id="Path" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"
+            transform="translate(12.565 0.75)" />
+        <path d="M0,0A4.426,4.426,0,0,1,3.5,3.5" data-name="Path" fill="none" id="Path-2" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+            stroke-width="1.5" transform="translate(12.565 4.293)" />
+    </g>
+</svg>
