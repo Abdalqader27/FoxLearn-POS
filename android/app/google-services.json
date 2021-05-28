@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "477252056210",
+    "project_id": "foxlearn-8491e",
+    "storage_bucket": "foxlearn-8491e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477252056210:android:958cc389e721940802e24b",
+        "android_client_info": {
+          "package_name": "com.abdalqader27.foxlearn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477252056210-vqnubipprf4vj2h0g4sdk7v5mv1iu3no.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVKLN8adkES9HbmYoVphhAor4kiWlVBuo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "477252056210-vqnubipprf4vj2h0g4sdk7v5mv1iu3no.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477252056210:android:cb01ff183612523d02e24b",
+        "android_client_info": {
+          "package_name": "com.abdalqader27.foxlearn_pos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477252056210-vqnubipprf4vj2h0g4sdk7v5mv1iu3no.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVKLN8adkES9HbmYoVphhAor4kiWlVBuo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "477252056210-vqnubipprf4vj2h0g4sdk7v5mv1iu3no.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

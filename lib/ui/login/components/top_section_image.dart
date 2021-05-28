@@ -39,7 +39,7 @@ class TopSectionImage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(top: 16),
               child: SvgPicture.asset(
-                Assets.svgWelcomeLogin,
+                Assets.svgFox,
                 height: Screen.height(200),
               ),
             ),

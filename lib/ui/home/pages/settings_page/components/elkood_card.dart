@@ -23,7 +23,7 @@ class ElkoodCard extends StatelessWidget {
           padding: EdgeInsets.all(Screen.width(32)),
           children: <Widget>[
             LogoSection(
-              logo: Assets.LogoELKOODWhite,
+              logo: Assets.logoElkoodLogo,
             ),
             Padding(
               padding: EdgeInsets.all(Screen.width(12)),

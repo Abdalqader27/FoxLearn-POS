@@ -52,7 +52,7 @@ class AboutScreen extends StatelessWidget {
                                             fontSize: Screen.width(17))),
                                     subtitle: null,
                                     trailing: SvgPicture.asset(
-                                        "assets/icons/Iconly-Bulk-Info Circle.svg",
+                                        "assets/icons/Iconly_Bulk_Info_Circle.svg",
                                         width: Screen.width(28),
                                         color: AppColors.purple),
                                   ),
@@ -70,7 +70,7 @@ class AboutScreen extends StatelessWidget {
                                     ),
                                     subtitle: null,
                                     trailing: SvgPicture.asset(
-                                      "assets/icons/Iconly-Bulk-Shield-Done.svg",
+                                      "assets/icons/Iconly_Bulk_Shield_Done.svg",
                                       width: Screen.width(28),
                                       color: AppColors.purple,
                                     ),
@@ -95,7 +95,7 @@ class AboutScreen extends StatelessWidget {
                                     ),
                                     subtitle: null,
                                     trailing: SvgPicture.asset(
-                                      "assets/icons/Iconly-Bulk-Unlock.svg",
+                                      "assets/icons/Iconly_Bulk_Unlock.svg",
                                       color: AppColors.purple,
                                       width: Screen.width(28),
                                     ),
@@ -164,7 +164,7 @@ class AboutScreen extends StatelessWidget {
                   ),
                   subtitle: null,
                   trailing: SvgPicture.asset(
-                    "assets/icons/Iconly-Bulk-Info Circle.svg",
+                    "assets/icons/Iconly_Bulk_Info_Circle.svg",
                     color: AppColors.purple,
                   ),
                 ),
@@ -182,7 +182,7 @@ class AboutScreen extends StatelessWidget {
                   ),
                   subtitle: null,
                   trailing: SvgPicture.asset(
-                    "assets/icons/Iconly-Bulk-Shield-Done.svg",
+                    "assets/icons/Iconly_Bulk_Shield_Done.svg",
                     color: AppColors.purple,
                   ),
                 ),
@@ -211,7 +211,7 @@ class AboutScreen extends StatelessWidget {
                   ),
                   subtitle: null,
                   trailing: SvgPicture.asset(
-                    "assets/icons/Iconly-Bulk-Unlock.svg",
+                    "assets/icons/Iconly_Bulk_Unlock.svg",
                     color: AppColors.purple,
                   ),
                 ),
