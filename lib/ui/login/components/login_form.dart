@@ -37,6 +37,7 @@ class LoginForm extends StatelessWidget {
               height: Screen.size.height * 0.05,
             ),
             CustomNeumorphic(
+              color: Theme.of(context).scaffoldBackgroundColor,
               child: Container(
                 padding: EdgeInsets.all(15),
                 child: Column(
