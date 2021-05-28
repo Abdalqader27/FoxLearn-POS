@@ -60,6 +60,7 @@ class Assets {
   static const String logoWhitelogohoriz = 'assets/logo/whitelogohoriz.png';
   static const String svgBalanceScreenHeader = 'assets/svg/balance_screen_header.svg';
   static const String svgBalanceScreenIcon = 'assets/svg/balance_screen_icon.svg';
+  static const String svgCirculBall = 'assets/svg/circul_ball.svg';
   static const String svgCodeGenerationScreenIcon = 'assets/svg/code_generation_screen_icon.svg';
   static const String svgCodesGenerationScreenHeader = 'assets/svg/codes_generation_screen_header.svg';
   static const String svgCodesHistoryScreenHeader = 'assets/svg/codes_history_screen_header.svg';

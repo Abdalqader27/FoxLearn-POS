@@ -52,45 +52,38 @@ class NeuTextFormFiled extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return CustomNeumorphic(
-      color: theme.scaffoldBackgroundColor,
-      child: TextFormField(
-        onFieldSubmitted: onSubmit as void Function(String)?,
-        style: AppTextStyles.medium(),
-        obscureText: obscure,
-        focusNode: focusNode,
-        initialValue: initialValue,
-        enabled: !disable,
-        controller: controller,
-        textInputAction: inputAction,
-        keyboardType: inputType,
-        validator: validator,
-        autofocus: autofocus,
-        onTap: onTap as void Function()?,
-        onChanged: onChange as void Function(String)?,
-        maxLength: maxLength,
-        inputFormatters: inputFormatter,
-        decoration: InputDecoration(
-            isDense: true,
-            labelText: label,
-            labelStyle: AppTextStyles.medium(),
-            contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-            border: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            focusedErrorBorder: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            suffixText: suffixText,
-            suffixStyle:
-                AppTextStyles.medium().copyWith(fontWeight: FontWeight.w600),
-            counterText: '',
-            prefixIcon: iconData != null
-                ? Icon(
-                    iconData,
-                    size: Screen.width(25),
-                    color: disable ? theme.textTheme.headline1!.color : null,
-                  )
-                : null),
-      ),
+    return TextFormField(
+      onFieldSubmitted: onSubmit as void Function(String)?,
+      style: AppTextStyles.medium(),
+      obscureText: obscure,
+      focusNode: focusNode,
+      initialValue: initialValue,
+      enabled: !disable,
+      controller: controller,
+      textInputAction: inputAction,
+      keyboardType: inputType,
+      validator: validator,
+      autofocus: autofocus,
+      onTap: onTap as void Function()?,
+      onChanged: onChange as void Function(String)?,
+      maxLength: maxLength,
+      inputFormatters: inputFormatter,
+      decoration: InputDecoration(
+          isDense: true,
+          labelText: label,
+          labelStyle: AppTextStyles.medium(),
+          contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+          suffixText: suffixText,
+          suffixStyle:
+              AppTextStyles.medium().copyWith(fontWeight: FontWeight.w600),
+          counterText: '',
+          prefixIcon: iconData != null
+              ? Icon(
+                  iconData,
+                  size: Screen.width(25),
+                  color: disable ? theme.textTheme.headline1!.color : null,
+                )
+              : null),
     );
   }
 }

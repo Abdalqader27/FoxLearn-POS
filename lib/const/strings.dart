@@ -15,7 +15,7 @@ class AppStrings {
   static const PASSWORD = 'كلمة المرور';
   static const REMEMBER_PASSWORD = 'تذكر كلمة المرور';
   static const FORGET_PASSWORD = 'هل نسيت كلمة المرور؟';
-  static const OK = 'تم';
+  static const OK = 'دخول ';
   static const INPUT_ERROR = 'املأ الحقل!';
   static const CONTACT_TO_SUPPORT = 'اضغط للاتصال بالدعم';
 

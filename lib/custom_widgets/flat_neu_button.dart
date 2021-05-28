@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:foxlearn_pos/app_theme/app_colors.dart';
 import 'package:foxlearn_pos/app_theme/text_styles.dart';
 import 'package:foxlearn_pos/services/screen.dart';
 
@@ -117,10 +118,11 @@ class _FlatNeuButtonWithTitle extends FlatNeuButton {
           shadowDarkColor: Colors.black.withOpacity(0.4),
           depth: 8),
       child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
           child: Text(
             text!,
             textAlign: TextAlign.center,
-            style: AppTextStyles.medium().copyWith(fontWeight: FontWeight.bold),
+            style: AppTextStyles.medium()
+                .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
           )));
 }

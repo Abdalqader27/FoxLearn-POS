@@ -34,29 +34,12 @@ mixin Login {
           ),
 
           ///forget password  and remember password section
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                InkWell(
-                  onTap: () => _onClickForgetPassword(context),
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Text(AppStrings.FORGET_PASSWORD,
-                        style: AppTextStyles.small(),
-                        textAlign: TextAlign.left),
-                  ),
-                )
-              ],
-            ),
-          ),
           SizedBox(height: Screen.height(64)),
           Center(
             child: FlatNeuButton.title(
                 onTap: () => _onClickOk(context),
                 text: AppStrings.OK,
+
                 color: Theme.of(context).accentColor),
           ),
         ],
@@ -85,10 +68,5 @@ mixin Login {
     }
   }
 
-  _onClickForgetPassword(BuildContext context) {
-    showDialog(
-        context: context,
-        barrierColor: Theme.of(context).cardColor.withOpacity(0.9),
-        builder: (_) => ForgetPasswordDialog());
-  }
+
 }

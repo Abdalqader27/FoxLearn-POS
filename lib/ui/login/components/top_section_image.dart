@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:foxlearn_pos/app_theme/app_colors.dart';
 import 'package:foxlearn_pos/generated/assets.dart';
 import 'package:foxlearn_pos/services/screen.dart';
 
@@ -29,7 +30,7 @@ class TopSectionImage extends StatelessWidget {
               Container(
                 width: double.infinity,
                 height: Screen.size.height * 0.025,
-                color: theme.accentColor.withOpacity(0.5),
+                color: AppColors.LIGHT_Red.withOpacity(.1),
               ),
             ],
           ),

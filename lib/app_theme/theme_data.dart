@@ -5,7 +5,7 @@ import 'app_colors.dart';
 class AppThemesData {
   static ThemeData getLightTheme() {
     return ThemeData.light().copyWith(
-        primaryColor: AppColors.purple,
+        primaryColor: AppColors.LIGHT_Red,
         accentColor: AppColors.yellow,
         buttonColor: AppColors.yellow,
         disabledColor: Colors.grey,
