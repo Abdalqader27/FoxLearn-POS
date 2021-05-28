@@ -74,6 +74,7 @@ class MainPage extends StatelessWidget {
           Container(
             margin: EdgeInsets.all(20),
             child: CustomNeumorphic(
+              depth: 0.8,
               color: Theme.of(context).scaffoldBackgroundColor,
               child: Container(
                 child: Column(
@@ -104,6 +105,8 @@ class MainPage extends StatelessWidget {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20),
             child: CustomNeumorphic(
+              depth: 0.8,
+
               color: Theme.of(context).scaffoldBackgroundColor,
               child: Column(
                 children: [
