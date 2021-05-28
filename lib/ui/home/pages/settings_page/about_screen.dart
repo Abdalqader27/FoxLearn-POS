@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:foxlearn_pos/app_theme/app_colors.dart';
 import 'package:foxlearn_pos/app_theme/text_styles.dart';
 import 'package:foxlearn_pos/custom_widgets/back_button.dart';
+import 'package:foxlearn_pos/custom_widgets/custom_neumorphic.dart';
 import 'package:foxlearn_pos/services/screen.dart';
 import 'package:url_launcher/url_launcher.dart' as UrlLauncer;
 
@@ -30,15 +31,11 @@ class AboutScreen extends StatelessWidget {
                 shrinkWrap: true,
                 children: [
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: Screen.width(16)),
+                    padding: EdgeInsets.symmetric(horizontal: Screen.width(26),vertical: Screen.height(30)),
                     child: Stack(
                       children: [
-                        Container(
-                          margin: EdgeInsets.all(Screen.width(16)),
-                          decoration: BoxDecoration(
-                              color: Colors.grey.withOpacity(.2),
-                              borderRadius:
-                                  BorderRadius.circular(Screen.width(15))),
+                        CustomNeumorphic(
+
                           child: Directionality(
                             textDirection: TextDirection.rtl,
                             child: Padding(
@@ -54,7 +51,7 @@ class AboutScreen extends StatelessWidget {
                                     trailing: SvgPicture.asset(
                                         "assets/icons/Iconly_Bulk_Info_Circle.svg",
                                         width: Screen.width(28),
-                                        color: AppColors.purple),
+                                        color: AppColors.LIGHT_Red),
                                   ),
                                   Padding(
                                     padding: EdgeInsets.all(Screen.width(8)),
@@ -72,7 +69,7 @@ class AboutScreen extends StatelessWidget {
                                     trailing: SvgPicture.asset(
                                       "assets/icons/Iconly_Bulk_Shield_Done.svg",
                                       width: Screen.width(28),
-                                      color: AppColors.purple,
+                                      color: AppColors.LIGHT_Red,
                                     ),
                                   ),
                                   Padding(
@@ -96,7 +93,7 @@ class AboutScreen extends StatelessWidget {
                                     subtitle: null,
                                     trailing: SvgPicture.asset(
                                       "assets/icons/Iconly_Bulk_Unlock.svg",
-                                      color: AppColors.purple,
+                                      color: AppColors.LIGHT_Red,
                                       width: Screen.width(28),
                                     ),
                                   ),
@@ -107,7 +104,7 @@ class AboutScreen extends StatelessWidget {
                                     padding: const EdgeInsets.only(
                                         right: 18.0, left: 18.0, top: 18),
                                     child: Text(
-                                      "© 2021 Get-Up Point of sale  Co. All rights reserved",
+                                      "© 2021 FOXLEARN Point of sale  Co. All rights reserved",
                                       style: TextStyle(
                                           fontWeight: FontWeight.normal,
                                           fontSize: Screen.width(12)),
@@ -124,19 +121,7 @@ class AboutScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Center(
-                      child: Text(
-                    "صمم وطوّر من قبل",
-                    style: TextStyle(
-                        fontWeight: FontWeight.normal,
-                        fontSize: Screen.width(18)),
-                  )),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        vertical: Screen.height(16),
-                        horizontal: Screen.width(32)),
-                    child: ElkoodCard(),
-                  )
+
                 ],
               ),
             ),

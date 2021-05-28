@@ -54,6 +54,8 @@ class BalancePage extends StatelessWidget {
                   ],
                 ),
               ),
+
+              Divider(),
               SpaceBox(
                 height: 16,
               ),

@@ -19,7 +19,7 @@ class EmptyWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SvgPicture.asset(!type2 ? Assets.svgEmpty : Assets.svgEmpty2, width: Screen.width(type2 ? 160 : 90)),
+        SvgPicture.asset(!type2 ? Assets.svgFox : Assets.svgFox, width: Screen.width(type2 ? 190 : 190)),
         SpaceBox(height: 16),
         Text(text!, textAlign: TextAlign.center, style: AppTextStyles.medium()),
       ],

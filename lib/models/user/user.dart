@@ -9,13 +9,12 @@ class User with _$User {
 
   factory User(
       {int? id,
-      String? firstName,
-      String? lastName,
+      String? name,
       @JsonKey(name: 'username') String? userName,
       int? receivedCodes,
       String? token,
       String? email,
-      String? phoneNumber,
+      String? phone,
       String? posAddress,
       int? subscriptionsCount,
       double? moneyLimit,

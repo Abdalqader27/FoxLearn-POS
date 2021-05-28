@@ -37,6 +37,7 @@ dependencies:
   freezed_annotation: ^0.14.1
   json_annotation: ^4.0.1
   collection: ^1.15.0-nullsafety.4
+  lottie: ^1.0.1
 
 
 
@@ -61,6 +62,7 @@ flutter:
     - assets/svg/
     - assets/icons/
     - assets/logo/
+    - assets/lottie/
 
   fonts:
     - family: sst-arabic

@@ -194,9 +194,8 @@ class __$InvoiceCopyWithImpl<$Res> extends _$InvoiceCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Invoice implements _Invoice {
   _$_Invoice(
       {this.id,

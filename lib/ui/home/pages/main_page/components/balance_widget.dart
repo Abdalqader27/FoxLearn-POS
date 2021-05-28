@@ -17,7 +17,7 @@ class BalanceWidget extends StatelessWidget {
           children: [
             Expanded(
               child: CharCard(
-                codes: userInfo!.count!,
+                codes: userInfo!.count??0,
                 unpaidCodes: userInfo!.receivedCodes!,
                 color: Theme.of(context).colorScheme.surface,
                 title: AppStrings.FINANCIAL_ACTIVITY,

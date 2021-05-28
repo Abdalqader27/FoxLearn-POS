@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
       final user = authState.user;
       final provider = Provider.of<AppProvider>(context, listen: false);
       provider.user = user;
-      provider.getAppData();
+     // provider.getAppData();
     }
   }
 

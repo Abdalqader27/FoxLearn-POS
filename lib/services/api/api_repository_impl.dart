@@ -7,24 +7,40 @@ import 'package:foxlearn_pos/models/user/user.dart';
 import 'package:foxlearn_pos/services/api/api_routes.dart';
 import 'package:foxlearn_pos/services/api/dio_client.dart';
 
-
 import 'api_repository.dart';
 import 'api_result/api_result.dart';
 import 'network_expcepations/network_exceptions.dart';
 
 class ApiRepositoryImpl extends ApiRepository {
   late DioClient dioClient;
-  static const String _BASE_URL = 'https://lms.elkood.com/api';
+  static const String _BASE_URL = 'http://194.32.76.82:8751/api';
+
   ApiRepositoryImpl() {
     var dio = Dio();
     dioClient = DioClient(_BASE_URL, dio);
   }
+
   @override
   Future<ApiResult<User>> login(String userName, String password) async {
     try {
-      final response = await dioClient.post(ApiRoutes.LOGIN,
-          data: {'username': userName, 'password': password});
-      User user = User.fromJson(response);
+      // final response = await dioClient.post(ApiRoutes.LOGIN,
+      //     data: {'username': userName, 'password': password});
+
+      User user = User(
+          name: "Abdalqader Alnajjar ",
+          id: 1,
+          receivedCodes: 100,
+          discountAvailable: true,
+          subscriptionsCount: 1000,
+          userName: "abdalqader27",
+          phone: "0969230540",
+          posAddress: "Aleppo",
+          moneyLimit: 1000000,
+          netProfit: 500,
+          email: "abdalqader27.najjar@gmail.com",
+          count: 1,
+          token: "token",
+          dateBlocked: null);
       return ApiResult.success(data: user);
     } catch (e) {
       return ApiResult.failure(error: NetworkExceptions.getDioException(e)!);

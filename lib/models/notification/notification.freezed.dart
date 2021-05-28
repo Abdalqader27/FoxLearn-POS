@@ -145,9 +145,8 @@ class __$NotificationModelCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_NotificationModel implements _NotificationModel {
   _$_NotificationModel({this.id, this.title, this.body, this.date});
 

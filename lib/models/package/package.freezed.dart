@@ -210,9 +210,8 @@ class __$PackageCopyWithImpl<$Res> extends _$PackageCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Package implements _Package {
   _$_Package(
       {this.id,

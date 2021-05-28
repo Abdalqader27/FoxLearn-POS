@@ -10,8 +10,15 @@ class SettingTile extends StatelessWidget {
   final VoidCallback? onTap;
   final String? title;
   final bool disableArrow;
-  const SettingTile({Key? key, this.iconData, this.onTap, this.title, this.disableArrow = false})
+
+  const SettingTile(
+      {Key? key,
+      this.iconData,
+      this.onTap,
+      this.title,
+      this.disableArrow = false})
       : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -26,12 +33,16 @@ class SettingTile extends StatelessWidget {
             child: InkWell(
               onTap: onTap,
               child: Padding(
-                padding: const EdgeInsets.all(AppPadding.p16),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: AppPadding.p16, vertical: AppPadding.p16),
                 child: Row(
                   children: [
-                    Icon(
-                      iconData,
-                      size: Screen.width(20),
+                    Container(
+                      padding: EdgeInsets.only(right: 10),
+                      child: Icon(
+                        iconData,
+                        size: Screen.width(20),
+                      ),
                     ),
                     SpaceBox(
                       width: 16,

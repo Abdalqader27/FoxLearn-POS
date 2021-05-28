@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:foxlearn_pos/app_theme/app_colors.dart';
 import 'package:foxlearn_pos/app_theme/text_styles.dart';
 import 'package:foxlearn_pos/bloc/requests/requests_bloc.dart';
 import 'package:foxlearn_pos/const/strings.dart';
@@ -69,10 +70,10 @@ class _HomeScreenState extends State<HomeScreen> {
           onItemSelected: navProvider.jumpToPage,
           animationDuration: Duration(milliseconds: 250),
           curve: Curves.easeOut,
-          backgroundColor: theme.primaryColor,
+          backgroundColor: AppColors.LIGHT_Red,
           selectedIndex: navProvider.pageIndex,
           containerHeight: Screen.height(60),
-          itemCornerRadius: 10,
+          itemCornerRadius: 15,
           items: _buildBottomItem(context),
         ),
       ),

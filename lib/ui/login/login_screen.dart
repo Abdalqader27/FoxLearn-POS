@@ -6,9 +6,11 @@ import 'package:foxlearn_pos/app_theme/app_colors.dart';
 import 'package:foxlearn_pos/app_theme/text_styles.dart';
 import 'package:foxlearn_pos/bloc/auth/auth_bloc.dart';
 import 'package:foxlearn_pos/const/strings.dart';
+import 'package:foxlearn_pos/custom_widgets/loading.dart';
 import 'package:foxlearn_pos/custom_widgets/space_box.dart';
 import 'package:foxlearn_pos/services/screen.dart';
 import 'package:foxlearn_pos/ui/login/components/forget_password_dialog.dart';
+import 'package:lottie/lottie.dart';
 
 import 'components/login.dart';
 import 'components/top_section_image.dart';
@@ -47,10 +49,7 @@ class LoginScreen extends StatelessWidget with Login {
                         listener: listenToState,
                         builder: (context, state) {
                           if (state is LoadingState)
-                            return SizedBox(
-                                height: Screen.height(300),
-                                child:
-                                    Center(child: CircularProgressIndicator()));
+                            return Loading();
                           else
                             return loginSection();
                         }),
@@ -62,5 +61,4 @@ class LoginScreen extends StatelessWidget with Login {
           ),
         ),
       );
-
 }

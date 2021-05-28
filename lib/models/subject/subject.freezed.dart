@@ -125,9 +125,8 @@ class __$SubjectCopyWithImpl<$Res> extends _$SubjectCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Subject implements _Subject {
   _$_Subject({this.subjectId, this.subjectName, this.units});
 

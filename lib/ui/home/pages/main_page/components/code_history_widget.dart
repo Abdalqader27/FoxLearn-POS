@@ -21,7 +21,7 @@ class CodeHistoryWidget extends StatelessWidget {
             child: CountCard(
               title: AppStrings.SOLD_CODES_COUNT,
               color: AppColors.cardYellow,
-              count: userInfo!.count,
+              count: userInfo?.count,
             ),
           ),
           SizedBox(
@@ -31,7 +31,7 @@ class CodeHistoryWidget extends StatelessWidget {
             child: CountCard(
               title: AppStrings.RECEIVABLES_CODE,
               color: theme.colorScheme.surface,
-              count: userInfo!.receivedCodes,
+              count: userInfo!.receivedCodes??0,
             ),
           ),
         ],

@@ -58,6 +58,7 @@ class Assets {
   static const String iconsIconlyLightSearch = 'assets/icons/Iconly_Light_Search.svg';
   static const String logoElkoodLogo = 'assets/logo/ElkoodLogo.png';
   static const String logoWhitelogohoriz = 'assets/logo/whitelogohoriz.png';
+  static const String lottieLoading = 'assets/lottie/loading.json';
   static const String svgBalanceScreenHeader = 'assets/svg/balance_screen_header.svg';
   static const String svgBalanceScreenIcon = 'assets/svg/balance_screen_icon.svg';
   static const String svgCirculBall = 'assets/svg/circul_ball.svg';

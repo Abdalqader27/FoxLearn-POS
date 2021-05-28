@@ -22,13 +22,12 @@ class _$UserTearOff {
 
   _User call(
       {int? id,
-      String? firstName,
-      String? lastName,
+      String? name,
       @JsonKey(name: 'username') String? userName,
       int? receivedCodes,
       String? token,
       String? email,
-      String? phoneNumber,
+      String? phone,
       String? posAddress,
       int? subscriptionsCount,
       double? moneyLimit,
@@ -38,13 +37,12 @@ class _$UserTearOff {
       bool? discountAvailable}) {
     return _User(
       id: id,
-      firstName: firstName,
-      lastName: lastName,
+      name: name,
       userName: userName,
       receivedCodes: receivedCodes,
       token: token,
       email: email,
-      phoneNumber: phoneNumber,
+      phone: phone,
       posAddress: posAddress,
       subscriptionsCount: subscriptionsCount,
       moneyLimit: moneyLimit,
@@ -66,14 +64,13 @@ const $User = _$UserTearOff();
 /// @nodoc
 mixin _$User {
   int? get id => throw _privateConstructorUsedError;
-  String? get firstName => throw _privateConstructorUsedError;
-  String? get lastName => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'username')
   String? get userName => throw _privateConstructorUsedError;
   int? get receivedCodes => throw _privateConstructorUsedError;
   String? get token => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
-  String? get phoneNumber => throw _privateConstructorUsedError;
+  String? get phone => throw _privateConstructorUsedError;
   String? get posAddress => throw _privateConstructorUsedError;
   int? get subscriptionsCount => throw _privateConstructorUsedError;
   double? get moneyLimit => throw _privateConstructorUsedError;
@@ -93,13 +90,12 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res>;
   $Res call(
       {int? id,
-      String? firstName,
-      String? lastName,
+      String? name,
       @JsonKey(name: 'username') String? userName,
       int? receivedCodes,
       String? token,
       String? email,
-      String? phoneNumber,
+      String? phone,
       String? posAddress,
       int? subscriptionsCount,
       double? moneyLimit,
@@ -120,13 +116,12 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
+    Object? name = freezed,
     Object? userName = freezed,
     Object? receivedCodes = freezed,
     Object? token = freezed,
     Object? email = freezed,
-    Object? phoneNumber = freezed,
+    Object? phone = freezed,
     Object? posAddress = freezed,
     Object? subscriptionsCount = freezed,
     Object? moneyLimit = freezed,
@@ -140,13 +135,9 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      firstName: firstName == freezed
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastName: lastName == freezed
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String?,
       userName: userName == freezed
           ? _value.userName
@@ -164,9 +155,9 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      phoneNumber: phoneNumber == freezed
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
               as String?,
       posAddress: posAddress == freezed
           ? _value.posAddress
@@ -207,13 +198,12 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   $Res call(
       {int? id,
-      String? firstName,
-      String? lastName,
+      String? name,
       @JsonKey(name: 'username') String? userName,
       int? receivedCodes,
       String? token,
       String? email,
-      String? phoneNumber,
+      String? phone,
       String? posAddress,
       int? subscriptionsCount,
       double? moneyLimit,
@@ -235,13 +225,12 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
+    Object? name = freezed,
     Object? userName = freezed,
     Object? receivedCodes = freezed,
     Object? token = freezed,
     Object? email = freezed,
-    Object? phoneNumber = freezed,
+    Object? phone = freezed,
     Object? posAddress = freezed,
     Object? subscriptionsCount = freezed,
     Object? moneyLimit = freezed,
@@ -255,13 +244,9 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      firstName: firstName == freezed
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastName: lastName == freezed
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String?,
       userName: userName == freezed
           ? _value.userName
@@ -279,9 +264,9 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      phoneNumber: phoneNumber == freezed
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
               as String?,
       posAddress: posAddress == freezed
           ? _value.posAddress
@@ -315,19 +300,17 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_User implements _User {
   _$_User(
       {this.id,
-      this.firstName,
-      this.lastName,
+      this.name,
       @JsonKey(name: 'username') this.userName,
       this.receivedCodes,
       this.token,
       this.email,
-      this.phoneNumber,
+      this.phone,
       this.posAddress,
       this.subscriptionsCount,
       this.moneyLimit,
@@ -342,9 +325,7 @@ class _$_User implements _User {
   @override
   final int? id;
   @override
-  final String? firstName;
-  @override
-  final String? lastName;
+  final String? name;
   @override
   @JsonKey(name: 'username')
   final String? userName;
@@ -355,7 +336,7 @@ class _$_User implements _User {
   @override
   final String? email;
   @override
-  final String? phoneNumber;
+  final String? phone;
   @override
   final String? posAddress;
   @override
@@ -373,7 +354,7 @@ class _$_User implements _User {
 
   @override
   String toString() {
-    return 'User(id: $id, firstName: $firstName, lastName: $lastName, userName: $userName, receivedCodes: $receivedCodes, token: $token, email: $email, phoneNumber: $phoneNumber, posAddress: $posAddress, subscriptionsCount: $subscriptionsCount, moneyLimit: $moneyLimit, dateBlocked: $dateBlocked, count: $count, netProfit: $netProfit, discountAvailable: $discountAvailable)';
+    return 'User(id: $id, name: $name, userName: $userName, receivedCodes: $receivedCodes, token: $token, email: $email, phone: $phone, posAddress: $posAddress, subscriptionsCount: $subscriptionsCount, moneyLimit: $moneyLimit, dateBlocked: $dateBlocked, count: $count, netProfit: $netProfit, discountAvailable: $discountAvailable)';
   }
 
   @override
@@ -382,12 +363,8 @@ class _$_User implements _User {
         (other is _User &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.firstName, firstName) ||
-                const DeepCollectionEquality()
-                    .equals(other.firstName, firstName)) &&
-            (identical(other.lastName, lastName) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastName, lastName)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.userName, userName) ||
                 const DeepCollectionEquality()
                     .equals(other.userName, userName)) &&
@@ -398,9 +375,8 @@ class _$_User implements _User {
                 const DeepCollectionEquality().equals(other.token, token)) &&
             (identical(other.email, email) ||
                 const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                const DeepCollectionEquality()
-                    .equals(other.phoneNumber, phoneNumber)) &&
+            (identical(other.phone, phone) ||
+                const DeepCollectionEquality().equals(other.phone, phone)) &&
             (identical(other.posAddress, posAddress) ||
                 const DeepCollectionEquality()
                     .equals(other.posAddress, posAddress)) &&
@@ -427,13 +403,12 @@ class _$_User implements _User {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(firstName) ^
-      const DeepCollectionEquality().hash(lastName) ^
+      const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(userName) ^
       const DeepCollectionEquality().hash(receivedCodes) ^
       const DeepCollectionEquality().hash(token) ^
       const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(phoneNumber) ^
+      const DeepCollectionEquality().hash(phone) ^
       const DeepCollectionEquality().hash(posAddress) ^
       const DeepCollectionEquality().hash(subscriptionsCount) ^
       const DeepCollectionEquality().hash(moneyLimit) ^
@@ -456,13 +431,12 @@ class _$_User implements _User {
 abstract class _User implements User {
   factory _User(
       {int? id,
-      String? firstName,
-      String? lastName,
+      String? name,
       @JsonKey(name: 'username') String? userName,
       int? receivedCodes,
       String? token,
       String? email,
-      String? phoneNumber,
+      String? phone,
       String? posAddress,
       int? subscriptionsCount,
       double? moneyLimit,
@@ -476,9 +450,7 @@ abstract class _User implements User {
   @override
   int? get id => throw _privateConstructorUsedError;
   @override
-  String? get firstName => throw _privateConstructorUsedError;
-  @override
-  String? get lastName => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'username')
   String? get userName => throw _privateConstructorUsedError;
@@ -489,7 +461,7 @@ abstract class _User implements User {
   @override
   String? get email => throw _privateConstructorUsedError;
   @override
-  String? get phoneNumber => throw _privateConstructorUsedError;
+  String? get phone => throw _privateConstructorUsedError;
   @override
   String? get posAddress => throw _privateConstructorUsedError;
   @override

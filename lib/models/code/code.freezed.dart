@@ -314,9 +314,8 @@ class __$CodeCopyWithImpl<$Res> extends _$CodeCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Code implements _Code {
   _$_Code(
       {this.id,

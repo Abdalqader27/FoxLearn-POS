@@ -30,6 +30,7 @@ class AppProvider extends ChangeNotifier {
   List<Invoice> _invoices = [];
   bool _loading = false;
   AuthBloc _authBloc;
+  bool showHello = true;
 
   ///this bloc for handle loading when send api request
   RequestsBloc _requestsBloc;
@@ -128,6 +129,11 @@ class AppProvider extends ChangeNotifier {
     }
   }
 
+  changeShowHello(bool value) {
+    showHello = value;
+    notifyListeners();
+  }
+
   getAppData() async {
     errorMessage = null;
     loading = true;
@@ -214,6 +220,8 @@ class AppProvider extends ChangeNotifier {
   }
 
   Future<ApiResult<bool?>> checkSecurityStamp(User user) async {
+    return ApiResult.success(data: true);
+
     final token =
         await (SharedPreferencesHandler.getString(key: SharedKeys.TOKEN));
     final username = user.userName;

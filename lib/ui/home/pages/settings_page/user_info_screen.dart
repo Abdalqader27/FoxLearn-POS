@@ -38,19 +38,12 @@ class UserInfoScreen extends StatelessWidget {
                           Expanded(
                             child: NeuTextFormFiled(
                               label: 'الاسم',
-                              initialValue: user.firstName,
+                              initialValue: user.name,
                               disable: true,
                             ),
                           ),
                           SpaceBox(
                             width: 12,
-                          ),
-                          Expanded(
-                            child: NeuTextFormFiled(
-                              label: 'الكنية',
-                              disable: true,
-                              initialValue: user.lastName,
-                            ),
                           ),
                         ],
                       ),
@@ -80,7 +73,7 @@ class UserInfoScreen extends StatelessWidget {
                     ),
                     NeuTextFormFiled(
                       label: 'رقم الهاتف',
-                      initialValue: user.phoneNumber,
+                      initialValue: user.phone,
                       disable: true,
                       iconData: Icons.phone_android_outlined,
                     ),

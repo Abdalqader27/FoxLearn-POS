@@ -9,13 +9,12 @@ part of 'user.dart';
 _$_User _$_$_UserFromJson(Map<String, dynamic> json) {
   return _$_User(
     id: json['id'] as int?,
-    firstName: json['firstName'] as String?,
-    lastName: json['lastName'] as String?,
+    name: json['name'] as String?,
     userName: json['username'] as String?,
     receivedCodes: json['receivedCodes'] as int?,
     token: json['token'] as String?,
     email: json['email'] as String?,
-    phoneNumber: json['phoneNumber'] as String?,
+    phone: json['phone'] as String?,
     posAddress: json['posAddress'] as String?,
     subscriptionsCount: json['subscriptionsCount'] as int?,
     moneyLimit: (json['moneyLimit'] as num?)?.toDouble(),
@@ -28,13 +27,12 @@ _$_User _$_$_UserFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$_$_UserToJson(_$_User instance) => <String, dynamic>{
       'id': instance.id,
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
+      'name': instance.name,
       'username': instance.userName,
       'receivedCodes': instance.receivedCodes,
       'token': instance.token,
       'email': instance.email,
-      'phoneNumber': instance.phoneNumber,
+      'phone': instance.phone,
       'posAddress': instance.posAddress,
       'subscriptionsCount': instance.subscriptionsCount,
       'moneyLimit': instance.moneyLimit,

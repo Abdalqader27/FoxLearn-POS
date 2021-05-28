@@ -224,9 +224,8 @@ class __$UnitCopyWithImpl<$Res> extends _$UnitCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Unit implements _Unit {
   _$_Unit(
       {this.id,
