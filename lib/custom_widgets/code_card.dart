@@ -47,7 +47,7 @@ class CodeCard extends StatelessWidget {
                       ),
                       Flexible(
                         flex: 1,
-                        child: Text(_formatDate(code.dateCreated!),
+                        child: Text(_formatDate("${code.dateCreated}"),
                             style: AppTextStyles.small()),
                       ),
                     ],

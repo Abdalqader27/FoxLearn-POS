@@ -27,18 +27,18 @@ class PackageContent extends StatelessWidget {
             SpaceBox(
               height: 16,
             ),
-            Expanded(
-              child: ListView.builder(
-                padding: EdgeInsets.symmetric(horizontal: AppPadding.p32, vertical: AppPadding.p16),
-                shrinkWrap: true,
-                itemCount: package!.subjects!.length,
-                itemBuilder: (_, index) {
-                  return SubjectContent(
-                    subject: package!.subjects![index],
-                  );
-                },
-              ),
-            ),
+            // Expanded(
+            //   child: ListView.builder(
+            //     padding: EdgeInsets.symmetric(horizontal: AppPadding.p32, vertical: AppPadding.p16),
+            //     shrinkWrap: true,
+            //     itemCount: package!.subjects!.length,
+            //     itemBuilder: (_, index) {
+            //       return SubjectContent(
+            //         subject: package!.subjects![index],
+            //       );
+            //     },
+            //   ),
+            // ),
           ],
         ),
       ),

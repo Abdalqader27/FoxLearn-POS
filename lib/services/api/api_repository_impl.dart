@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:foxlearn_pos/models/code/code.dart';
 import 'package:foxlearn_pos/models/invoice/invoice.dart';
@@ -23,25 +25,10 @@ class ApiRepositoryImpl extends ApiRepository {
   @override
   Future<ApiResult<User>> login(String userName, String password) async {
     try {
-      // final response = await dioClient.post(ApiRoutes.LOGIN,
-      //     data: {'username': userName, 'password': password});
+      final response = await dioClient.post(ApiRoutes.LOGIN,
+          data: {'username': userName, 'password': password});
 
-      User user = User(
-          name: "Abdalqader Alnajjar ",
-          id: 1,
-          receivedCodes: 100,
-          discountAvailable: true,
-          subscriptionsCount: 1000,
-          userName: "abdalqader27",
-          phone: "0969230540",
-          posAddress: "Aleppo",
-          moneyLimit: 1000000,
-          netProfit: 500,
-          email: "abdalqader27.najjar@gmail.com",
-          count: 1,
-          token: "token",
-          dateBlocked: null);
-      return ApiResult.success(data: user);
+      return ApiResult.success(data: User.fromJson(response));
     } catch (e) {
       return ApiResult.failure(error: NetworkExceptions.getDioException(e)!);
     }
@@ -76,11 +63,10 @@ class ApiRepositoryImpl extends ApiRepository {
   }
 
   @override
-  Future<ApiResult<List<Package>>> getPackages(int packageType) async {
+  Future<ApiResult<List<Package>>> getPackages() async {
     try {
       final response = await dioClient.get(
         ApiRoutes.GET_PACKAGES,
-        queryParameters: {'packageType': packageType},
         auth: true,
       );
       final List<Package> packages = (response as List).map((e) {
@@ -101,9 +87,12 @@ class ApiRepositoryImpl extends ApiRepository {
         queryParameters: {'posId': posId},
         auth: true,
       );
-      List responseData = response['posCodes'];
       final List<Code> codes =
-          responseData.map((e) => Code.fromJson(e)).toList();
+      ( response as List).map((e)  {
+        return Code.fromJson(e);
+      }).toList() ;
+      print('codes $codes');
+
       return ApiResult.success(data: codes);
     } catch (e) {
       return ApiResult.failure(error: NetworkExceptions.getDioException(e)!);

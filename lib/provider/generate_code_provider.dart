@@ -3,7 +3,6 @@ import 'package:foxlearn_pos/bloc/requests/requests_bloc.dart';
 import 'package:foxlearn_pos/const/strings.dart';
 import 'package:foxlearn_pos/models/code/code.dart';
 import 'package:foxlearn_pos/models/package/package.dart';
-import 'package:foxlearn_pos/models/package/package_type.dart';
 import 'package:foxlearn_pos/models/user/user.dart';
 import 'package:foxlearn_pos/services/api/api_repository_impl.dart';
 import 'package:foxlearn_pos/services/api/api_result/api_result.dart';
@@ -84,37 +83,25 @@ class GenerateCodeProvider extends ChangeNotifier {
   }
 
   onChangeCount(String value, int packageType) {
-    if (packageType == PackageType.OFFER)
-      discountOffer = value;
-    else
       discountNormal = value;
   }
 
-  Package? getSelectedPackage(int type) {
-    if (type == PackageType.OFFER) return _selectedOfferPackage;
+  Package? getSelectedPackage() {
     return _selectedNormalPackage;
   }
 
-  String getDiscount(int type) {
-    if (type == PackageType.OFFER) return _discountOffer;
+  String getDiscount( ) {
     return _discountNormal;
   }
 
-  String getDiscountedValue(int type) {
-    if (type == PackageType.OFFER) {
-      final price = selectedOfferPackage!.price!;
-      final discount = double.parse(discountOffer);
-      return (price - (price * (discount / 100))).toInt().toString();
-    }
+  String getDiscountedValue() {
     final price = selectedNormalPackage!.price!;
     final discount = double.parse(discountNormal);
     return (price - (price * (discount / 100))).toInt().toString();
   }
 
-  selectPackage(int type, Package package) {
-    if (type == PackageType.OFFER)
-      selectedOfferPackage = package;
-    else
+  selectPackage(Package package) {
+
       selectedNormalPackage = package;
   }
 
@@ -125,10 +112,6 @@ class GenerateCodeProvider extends ChangeNotifier {
 
     String discount = _discountNormal;
 
-    if (type == PackageType.OFFER) {
-      selectedPackage = _selectedOfferPackage;
-      discount = _discountOffer;
-    }
 
     ApiResult<Code> apiResult = await _apiRepository.generateCode(
         _user.id, selectedPackage!.id, discount.isNotEmpty ? double.parse(discount) : 0.0);

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:foxlearn_pos/const/padding.dart';
 import 'package:foxlearn_pos/custom_widgets/image_title_card.dart';
 import 'package:foxlearn_pos/models/package/package.dart';
-import 'package:foxlearn_pos/models/package/package_type.dart';
 import 'package:foxlearn_pos/provider/app_provider.dart';
 import 'package:foxlearn_pos/provider/bottom_nav_provider.dart';
 import 'package:foxlearn_pos/provider/generate_code_provider.dart';
@@ -36,14 +35,9 @@ class QuickActivationList extends StatelessWidget {
   _onTap(Package package, BuildContext context) {
     final provider = Provider.of<GenerateCodeProvider>(context, listen: false);
     final tabProvider =  Provider.of<TabBarProvider>(context, listen: false);
-    if (package.packageType == PackageType.OFFER) {
-      provider.selectedOfferPackage = package;
-      tabProvider.pageIndex=1;
-    }
-    else {
       provider.selectedNormalPackage = package;
       tabProvider.pageIndex=0;
-    }
+
     Provider.of<BottomNavProvider>(context, listen: false).jumpToPage(3);
   }
 }

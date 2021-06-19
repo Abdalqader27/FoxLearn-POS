@@ -26,7 +26,7 @@ class CountCard extends StatelessWidget {
             textAlign: TextAlign.center, style: AppTextStyles.medium()),
         Divider(),
         SizedBox(height: Screen.height(8)),
-        Text(count.toString(),
+        Text((count??0).toString(),
             textAlign: TextAlign.center,
             style: AppTextStyles.bigTitle().copyWith(
                 color: Theme.of(context).colorScheme.secondaryVariant))

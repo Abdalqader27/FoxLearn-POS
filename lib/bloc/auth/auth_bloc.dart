@@ -11,7 +11,6 @@ import 'package:foxlearn_pos/services/shared_preferences/shared_keys.dart';
 import 'package:foxlearn_pos/services/shared_preferences/shared_preferences_handler.dart';
 import 'package:meta/meta.dart';
 
-
 part 'auth_event.dart';
 
 part 'auth_state.dart';
@@ -38,17 +37,21 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   Stream<AuthState> _checkAuth() async* {
-    final token = await SharedPreferencesHandler.getString(key: SharedKeys.TOKEN);
+    final token =
+        await SharedPreferencesHandler.getString(key: SharedKeys.TOKEN);
     if (token != null) {
-      ///set user null for get new user info in home screen (from API)
-      yield LoginSuccess(user: null);
+      final user = await SharedPreferencesHandler.getString(
+          key: SharedKeys.USER_DATA_KEY);
+      if (user == null) yield LoggedOutState();
+      yield LoginSuccess(user: User.fromJson(json.decode(user.toString())));
     } else
       yield LoggedOutState();
   }
 
   Stream<AuthState> _tryLogin(LoginEvent event) async* {
     yield LoadingState(message: 'جاري الاتصال بالخادم..');
-    ApiResult<User> apiResult = await apiRepository.login(event.userName, event.password);
+    ApiResult<User> apiResult =
+        await apiRepository.login(event.userName, event.password);
 
     yield* apiResult.when(
       success: (User user) async* {
@@ -58,7 +61,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         SharedPreferencesHandler.set(value: user.token, key: SharedKeys.TOKEN);
 
         ///save user
-        SharedPreferencesHandler.set(key: SharedKeys.USER_DATA_KEY, value: jsonEncode(user.toJson()));
+        SharedPreferencesHandler.set(
+            key: SharedKeys.USER_DATA_KEY, value: jsonEncode(user.toJson()));
       },
       failure: (NetworkExceptions error) async* {
         yield LoginError(networkExceptions: error);

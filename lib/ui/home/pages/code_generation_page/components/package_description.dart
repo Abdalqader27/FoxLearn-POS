@@ -10,14 +10,11 @@ class PackageDescription extends StatelessWidget {
   const PackageDescription({Key? key, this.description}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return CustomNeumorphic(
-      color: Theme.of(context).scaffoldBackgroundColor,
-      child: Padding(
-        padding: const EdgeInsets.all(AppPadding.p16),
-        child: Text(
-          description!,
-          style: AppTextStyles.medium(),
-        ),
+    return Padding(
+      padding: const EdgeInsets.all(AppPadding.p16),
+      child: Text(
+        description!,
+        style: AppTextStyles.medium(),
       ),
     );
   }

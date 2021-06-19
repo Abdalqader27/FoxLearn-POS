@@ -7,7 +7,6 @@ import 'package:foxlearn_pos/const/strings.dart';
 import 'package:foxlearn_pos/custom_widgets/custom_flat_button.dart';
 import 'package:foxlearn_pos/custom_widgets/empty.dart';
 import 'package:foxlearn_pos/custom_widgets/space_box.dart';
-import 'package:foxlearn_pos/models/package/package_type.dart';
 import 'package:foxlearn_pos/provider/app_provider.dart';
 import 'package:foxlearn_pos/provider/generate_code_provider.dart';
 import 'package:foxlearn_pos/services/screen.dart';
@@ -33,18 +32,13 @@ class _CodeGenerationPageState extends State<CodeGenerationPage>
   @override
   void initState() {
     _discountNormalController = TextEditingController();
-    _discountOffersController = TextEditingController();
     final int initIndex =
         Provider.of<TabBarProvider>(context, listen: false).pageIndex;
     _tabController =
         TabController(length: 2, vsync: this, initialIndex: initIndex);
     _pages = [
       PackagesPage(
-          packagesType: PackageType.NORMAL,
           controller: _discountNormalController),
-      PackagesPage(
-          packagesType: PackageType.OFFER,
-          controller: _discountOffersController),
     ];
     super.initState();
   }
@@ -59,17 +53,17 @@ class _CodeGenerationPageState extends State<CodeGenerationPage>
         child: LayoutBuilder(builder: (context, constrains) {
           return Column(
             children: [
-              Center(
-                child: Container(
-                  margin: EdgeInsets.only(
-                      bottom: AppPadding.p16, top: AppPadding.p8),
-                  width: Screen.size.width / 1.5,
-                  height: Screen.height(45),
-                  child: CustomTabBar(
-                    tabController: _tabController,
-                  ),
-                ),
-              ),
+              // Center(
+              //   child: Container(
+              //     margin: EdgeInsets.only(
+              //         bottom: AppPadding.p16, top: AppPadding.p8),
+              //     width: Screen.size.width / 1.5,
+              //     height: Screen.height(45),
+              //     child: CustomTabBar(
+              //       tabController: _tabController,
+              //     ),
+              //   ),
+              // ),
               SizedBox(
                 height: constrains.maxHeight - Screen.height(50) - 24,
                 child: Align(
@@ -81,18 +75,6 @@ class _CodeGenerationPageState extends State<CodeGenerationPage>
                         Selector<TabBarProvider, int>(
                           selector: (_, provider) => provider.pageIndex,
                           builder: (_, index, __) {
-                            if (index + 1 == PackageType.OFFER &&
-                                appProvider.offersPackages.isEmpty) {
-                              return SizedBox(
-                                height: (constrains.maxHeight) -
-                                    Screen.height(45) -
-                                    24,
-                                child: EmptyWidget(
-                                  text: AppStrings.NO_OFFERS,
-                                  type2: true,
-                                ),
-                              );
-                            }
                             return Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
@@ -133,7 +115,7 @@ class _CodeGenerationPageState extends State<CodeGenerationPage>
   @override
   void dispose() {
     _discountNormalController.dispose();
-    _discountOffersController.dispose();
+    // _discountOffersController.dispose();
     _tabController.dispose();
     super.dispose();
   }

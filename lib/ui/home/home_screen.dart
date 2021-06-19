@@ -62,8 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return Scaffold(
+      return Scaffold(
       key: _scaffoldKey,
       bottomNavigationBar: Consumer<BottomNavProvider>(
         builder: (_, navProvider, __) => BottomNavyBar(

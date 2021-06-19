@@ -7,7 +7,6 @@ import 'package:foxlearn_pos/models/code/code.dart';
 import 'package:foxlearn_pos/models/invoice/invoice.dart';
 import 'package:foxlearn_pos/models/notification/notification.dart';
 import 'package:foxlearn_pos/models/package/package.dart';
-import 'package:foxlearn_pos/models/package/package_type.dart';
 import 'package:foxlearn_pos/models/user/user.dart';
 import 'package:foxlearn_pos/services/api/api_repository_impl.dart';
 import 'package:foxlearn_pos/services/api/api_result/api_result.dart';
@@ -37,6 +36,7 @@ class AppProvider extends ChangeNotifier {
 
   AppProvider(this._authBloc, this._requestsBloc) {
     _apiRepository = ApiRepositoryImpl();
+   getAppData();
   }
 
   bool get loading => _loading;
@@ -166,10 +166,9 @@ class AppProvider extends ChangeNotifier {
       [
         getUserInfo(user.id), //0
         getCodes(user.id), //1
-        getPackages(PackageType.NORMAL), //2
-        getPackages(PackageType.OFFER), //3
-        getNotifications(user.id), //4
-        getInvoices(user.id), //5
+        getPackages(), //2
+        getNotifications(user.id), //3
+        getInvoices(user.id), //4
       ],
     );
 
@@ -191,12 +190,10 @@ class AppProvider extends ChangeNotifier {
     handleUserApiResult(result[0] as ApiResult<User>);
     handleCodesApiResult(result[1] as ApiResult<List<Code>>);
     handlePackageApiResult(
-        result[2] as ApiResult<List<Package>>, PackageType.NORMAL);
-    handlePackageApiResult(
-        result[3] as ApiResult<List<Package>>, PackageType.OFFER);
+        result[2] as ApiResult<List<Package>>);
     handleNotificationsApiResult(
-        result[4] as ApiResult<List<List<NotificationModel>>>);
-    handleInvoicesApiResult(result[5] as ApiResult<List<Invoice>>);
+        result[3] as ApiResult<List<List<NotificationModel>>>);
+    handleInvoicesApiResult(result[4] as ApiResult<List<Invoice>>);
     _setFastGeneratePackage();
 
     loading = false;
@@ -213,9 +210,9 @@ class AppProvider extends ChangeNotifier {
   }
 
   ///Type [0] for normal packages and type [1] is for offers packages
-  Future<ApiResult<List<Package>>> getPackages(int packagesType) async {
+  Future<ApiResult<List<Package>>> getPackages() async {
     ApiResult<List<Package>> apiResult =
-        await _apiRepository.getPackages(packagesType);
+        await _apiRepository.getPackages();
     return apiResult;
   }
 
@@ -264,14 +261,12 @@ class AppProvider extends ChangeNotifier {
   }
 
   ///Type [0] for normal packages and type [1] is for offers packages
-  handlePackageApiResult(ApiResult<List<Package>> apiResult, int packagesType) {
+  handlePackageApiResult(ApiResult<List<Package>> apiResult) {
     apiResult.maybeWhen(
       orElse: () {},
       success: (List<Package> packagesData) {
-        if (packagesType == PackageType.NORMAL)
           normalPackages = packagesData;
-        else
-          offersPackages = packagesData;
+
       },
     );
   }

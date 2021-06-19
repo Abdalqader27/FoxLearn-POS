@@ -19,8 +19,7 @@ class HomeScreenBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Selector<AppProvider, Tuple2<bool, String?>>(
-      selector: (_, provider) =>
-          Tuple2(provider.loading, provider.errorMessage),
+      selector: (_, provider) => Tuple2(provider.loading, provider.errorMessage),
       builder: (_, data, __) {
         if (data.item1)
           return Scaffold(

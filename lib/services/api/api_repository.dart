@@ -15,7 +15,7 @@ abstract class ApiRepository {
   Future<ApiResult<bool?>> checkSecurityStamp(
       String username, String securityStamp);
 
-  Future<ApiResult<List<Package>>> getPackages(int packageType);
+  Future<ApiResult<List<Package>>> getPackages();
 
   Future<ApiResult<List<Code>>> getPosCodes(int posId);
 

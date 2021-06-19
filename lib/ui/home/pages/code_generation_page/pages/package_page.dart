@@ -9,7 +9,6 @@ import 'package:foxlearn_pos/custom_widgets/custom_flat_button.dart';
 import 'package:foxlearn_pos/custom_widgets/neu_text_filed.dart';
 import 'package:foxlearn_pos/custom_widgets/space_box.dart';
 import 'package:foxlearn_pos/models/package/package.dart';
-import 'package:foxlearn_pos/models/package/package_type.dart';
 import 'package:foxlearn_pos/provider/app_provider.dart';
 import 'package:foxlearn_pos/provider/generate_code_provider.dart';
 import 'package:foxlearn_pos/services/navigator.dart';
@@ -21,17 +20,15 @@ import '../components/package_drop_down.dart';
 
 class PackagesPage extends StatelessWidget {
   final TextEditingController? controller;
-  final int packagesType;
 
   const PackagesPage(
-      {Key? key, this.controller, this.packagesType = PackageType.NORMAL})
+      {Key? key, this.controller})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Consumer<GenerateCodeProvider>(
       builder: (_, generateCodeProvider, __) {
-        final description =
-            generateCodeProvider.getSelectedPackage(packagesType)!.description;
+        final description = generateCodeProvider.getSelectedPackage()!.description;
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32),
           child: Column(
@@ -45,16 +42,14 @@ class PackagesPage extends StatelessWidget {
                 height: 8,
               ),
               Selector<AppProvider, List<Package>>(
-                selector: (_, provider) => packagesType == PackageType.NORMAL
-                    ? provider.normalPackages
-                    : provider.offersPackages,
+                selector: (_, provider) =>  provider.normalPackages,
                 builder: (_, packages, __) {
                   return PackageDropDown(
                     packages: packages,
                     selectedPackage:
-                        generateCodeProvider.getSelectedPackage(packagesType),
+                        generateCodeProvider.getSelectedPackage(),
                     onChange: (package) {
-                      generateCodeProvider.selectPackage(packagesType, package);
+                      generateCodeProvider.selectPackage(package);
                     },
                   );
                 },
@@ -82,7 +77,7 @@ class PackagesPage extends StatelessWidget {
               ),
               CustomFlatButton(
                 onTap: () => _showPackageContent(
-                    context, generateCodeProvider, packagesType),
+                    context, generateCodeProvider),
                 color: AppColors.fadedPurple,
                 textStyle: AppTextStyles.medium(),
                 title: AppStrings.SHOW_PACKAGE_DETAILS,
@@ -97,14 +92,14 @@ class PackagesPage extends StatelessWidget {
                 height: 16,
               ),
               _buildTextFiledWithTitle(AppStrings.DISCOUNT, controller,
-                  generateCodeProvider.onChangeCount, packagesType),
+                  generateCodeProvider.onChangeCount),
               SpaceBox(
                 height: 16,
               ),
               _buildTotalCard(
                   AppStrings.PRICE,
                   generateCodeProvider
-                      .getSelectedPackage(packagesType)!
+                      .getSelectedPackage()!
                       .price
                       .toString()),
               SpaceBox(
@@ -112,13 +107,13 @@ class PackagesPage extends StatelessWidget {
               ),
               AnimatedSwitcher(
                 duration: Duration(milliseconds: 300),
-                child: generateCodeProvider.getDiscount(packagesType).isNotEmpty
+                child: generateCodeProvider.getDiscount().isNotEmpty
                     ? Column(
                         children: [
                           _buildTotalCard(
                               AppStrings.TOTAL_PRICE,
                               (generateCodeProvider
-                                  .getDiscountedValue(packagesType))),
+                                  .getDiscountedValue())),
                           SpaceBox(
                             height: 16,
                           ),
@@ -138,24 +133,10 @@ class PackagesPage extends StatelessWidget {
   }
 
   _buildTextFiledWithTitle(String title, TextEditingController? controller,
-      Function(String, int) onChange, int type) {
+      Function(String, int) onChange) {
     return Row(
       children: [
         Expanded(flex: 1, child: _buildTitle(title)),
-        Expanded(
-          flex: 3,
-          child: NeuTextFormFiled(
-            controller: controller,
-            maxLength: 2,
-            onChange: (value) {
-              onChange(value, type);
-            },
-            inputType: TextInputType.number,
-            iconData: null,
-            inputFormatter: [FilteringTextInputFormatter.digitsOnly],
-            suffixText: '%',
-          ),
-        ),
       ],
     );
   }
@@ -189,8 +170,8 @@ class PackagesPage extends StatelessWidget {
   }
 
   _showPackageContent(BuildContext context,
-      GenerateCodeProvider generateCodeProvider, int type) {
-    final package = generateCodeProvider.getSelectedPackage(type);
+      GenerateCodeProvider generateCodeProvider) {
+    final package = generateCodeProvider.getSelectedPackage();
     AppNavigator.push(
         context,
         PackageContent(
