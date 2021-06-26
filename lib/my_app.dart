@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
           lazy: true,
           create: (_) => AppProvider(context.read<AuthBloc>(), context.read<RequestsBloc>()),
           child: MaterialApp(
+            debugShowCheckedModeBanner: false,
             builder: DevicePreview.appBuilder, // Add the builder here
             title: 'POS FOX-LEARN',
             themeMode: ThemeMode.light,

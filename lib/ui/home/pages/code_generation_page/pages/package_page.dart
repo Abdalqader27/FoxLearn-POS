@@ -21,14 +21,14 @@ import '../components/package_drop_down.dart';
 class PackagesPage extends StatelessWidget {
   final TextEditingController? controller;
 
-  const PackagesPage(
-      {Key? key, this.controller})
-      : super(key: key);
+  const PackagesPage({Key? key, this.controller}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Consumer<GenerateCodeProvider>(
       builder: (_, generateCodeProvider, __) {
-        final description = generateCodeProvider.getSelectedPackage()!.description;
+        final description =
+            generateCodeProvider.getSelectedPackage()!.description;
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32),
           child: Column(
@@ -39,15 +39,14 @@ class PackagesPage extends StatelessWidget {
               ),
               _buildTitle(AppStrings.PACKAGE_NAME),
               SpaceBox(
-                height: 8,
+                height: 16,
               ),
               Selector<AppProvider, List<Package>>(
-                selector: (_, provider) =>  provider.normalPackages,
+                selector: (_, provider) => provider.normalPackages,
                 builder: (_, packages, __) {
                   return PackageDropDown(
                     packages: packages,
-                    selectedPackage:
-                        generateCodeProvider.getSelectedPackage(),
+                    selectedPackage: generateCodeProvider.getSelectedPackage(),
                     onChange: (package) {
                       generateCodeProvider.selectPackage(package);
                     },
@@ -75,33 +74,33 @@ class PackagesPage extends StatelessWidget {
                   ],
                 ),
               ),
-              CustomFlatButton(
-                onTap: () => _showPackageContent(
-                    context, generateCodeProvider),
-                color: AppColors.fadedPurple,
-                textStyle: AppTextStyles.medium(),
-                title: AppStrings.SHOW_PACKAGE_DETAILS,
-              ),
               SpaceBox(
                 height: 16,
               ),
-              Divider(
-                height: 2,
-              ),
+              // CustomFlatButton(
+              //   onTap: () => _showPackageContent(
+              //       context, generateCodeProvider),
+              //   color: AppColors.fadedPurple,
+              //   textStyle: AppTextStyles.medium(),
+              //   title: AppStrings.SHOW_PACKAGE_DETAILS,
+              // ),
+              // SpaceBox(
+              //   height: 16,
+              // ),
+              // Divider(
+              //   height: 2,
+              // ),
+              // SpaceBox(
+              //   height: 16,
+              // ),
+              // _buildTextFiledWithTitle(AppStrings.DISCOUNT, controller,
+              //     generateCodeProvider.onChangeCount),
+              Divider(),
               SpaceBox(
                 height: 16,
               ),
-              _buildTextFiledWithTitle(AppStrings.DISCOUNT, controller,
-                  generateCodeProvider.onChangeCount),
-              SpaceBox(
-                height: 16,
-              ),
-              _buildTotalCard(
-                  AppStrings.PRICE,
-                  generateCodeProvider
-                      .getSelectedPackage()!
-                      .price
-                      .toString()),
+              _buildTotalCard(AppStrings.PRICE,
+                  generateCodeProvider.getSelectedPackage()!.price.toString()),
               SpaceBox(
                 height: 16,
               ),
@@ -110,10 +109,12 @@ class PackagesPage extends StatelessWidget {
                 child: generateCodeProvider.getDiscount().isNotEmpty
                     ? Column(
                         children: [
-                          _buildTotalCard(
-                              AppStrings.TOTAL_PRICE,
-                              (generateCodeProvider
-                                  .getDiscountedValue())),
+                          SpaceBox(
+                            height: 16,
+                          ),
+                          _buildTotalCard(AppStrings.TOTAL_PRICE,
+                              (generateCodeProvider.getDiscountedValue())),
+
                           SpaceBox(
                             height: 16,
                           ),
@@ -169,8 +170,8 @@ class PackagesPage extends StatelessWidget {
     );
   }
 
-  _showPackageContent(BuildContext context,
-      GenerateCodeProvider generateCodeProvider) {
+  _showPackageContent(
+      BuildContext context, GenerateCodeProvider generateCodeProvider) {
     final package = generateCodeProvider.getSelectedPackage();
     AppNavigator.push(
         context,

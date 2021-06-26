@@ -83,6 +83,9 @@ class _CodeGenerationPageState extends State<CodeGenerationPage>
                                     child: Container(
                                         key: Key(index.toString()),
                                         child: _pages[index])),
+                                SpaceBox(
+                                  height: 16,
+                                ),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: AppPadding.p32),

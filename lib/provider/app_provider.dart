@@ -36,7 +36,7 @@ class AppProvider extends ChangeNotifier {
 
   AppProvider(this._authBloc, this._requestsBloc) {
     _apiRepository = ApiRepositoryImpl();
-   getAppData();
+    getAppData();
   }
 
   bool get loading => _loading;
@@ -117,15 +117,17 @@ class AppProvider extends ChangeNotifier {
       List<Package> packages = [];
       int i = 0;
       while (packages.length != 10 && i != codesList.length) {
-        final packageId = _codesList[i].packagesIds!.first;
-        final package =
-            allPackages.singleWhereOrNull((element) => element.id == packageId);
-        if (package != null) {
-          packages.add(package);
+          final packageId = _codesList[i].packagesIds!.first;
+          final package = allPackages
+              .singleWhereOrNull((element) => element.id == packageId);
+          if (package != null) {
+            packages.add(package);
+          }
         }
+        _fastPackages = List.from(packages);
         i++;
-      }
-      _fastPackages = List.from(packages);
+
+      
     }
   }
 
@@ -189,8 +191,7 @@ class AppProvider extends ChangeNotifier {
 
     handleUserApiResult(result[0] as ApiResult<User>);
     handleCodesApiResult(result[1] as ApiResult<List<Code>>);
-    handlePackageApiResult(
-        result[2] as ApiResult<List<Package>>);
+    handlePackageApiResult(result[2] as ApiResult<List<Package>>);
     handleNotificationsApiResult(
         result[3] as ApiResult<List<List<NotificationModel>>>);
     handleInvoicesApiResult(result[4] as ApiResult<List<Invoice>>);
@@ -211,8 +212,7 @@ class AppProvider extends ChangeNotifier {
 
   ///Type [0] for normal packages and type [1] is for offers packages
   Future<ApiResult<List<Package>>> getPackages() async {
-    ApiResult<List<Package>> apiResult =
-        await _apiRepository.getPackages();
+    ApiResult<List<Package>> apiResult = await _apiRepository.getPackages();
     return apiResult;
   }
 
@@ -265,8 +265,7 @@ class AppProvider extends ChangeNotifier {
     apiResult.maybeWhen(
       orElse: () {},
       success: (List<Package> packagesData) {
-          normalPackages = packagesData;
-
+        normalPackages = packagesData;
       },
     );
   }

@@ -31,25 +31,25 @@ class MainPage extends StatelessWidget {
         children: [
           // Divider(color: AppColors.purple.withOpacity(.4),),
 
-          if (appProvider.fastPackages.isNotEmpty)
-            StickyHeader(
-              header: Container(
-                color: Theme.of(context).scaffoldBackgroundColor,
-                child: Column(
-                  children: [
-                    buildTitle(AppStrings.QUICK_ACTIVATION_TITLE, context, 3),
-                    SpaceBox(
-                      height: 15,
-                    ),
-                  ],
-                ),
-              ),
-              content: SizedBox(
-                height: Screen.height(150),
-                width: double.infinity,
-                child: QuickActivationList(),
-              ),
-            ),
+          // if (appProvider.fastPackages.isNotEmpty)
+          //   StickyHeader(
+          //     header: Container(
+          //       color: Theme.of(context).scaffoldBackgroundColor,
+          //       child: Column(
+          //         children: [
+          //           buildTitle(AppStrings.QUICK_ACTIVATION_TITLE, context, 3),
+          //           SpaceBox(
+          //             height: 15,
+          //           ),
+          //         ],
+          //       ),
+          //     ),
+          //     content: SizedBox(
+          //       height: Screen.height(150),
+          //       width: double.infinity,
+          //       child: QuickActivationList(),
+          //     ),
+          //   ),
           // Divider(color: AppColors.purple.withOpacity(.4),),
 
           Visibility(

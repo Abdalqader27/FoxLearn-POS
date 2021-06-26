@@ -25,7 +25,8 @@ class Package {
       String? name, 
       String? description, 
       int? price, 
-      dynamic? services, 
+      dynamic? services,
+
       int? codeCount}){
     _id = id;
     _name = name;
