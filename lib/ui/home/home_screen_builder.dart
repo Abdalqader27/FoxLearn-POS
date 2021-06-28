@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foxlearn_pos/bloc/requests/requests_bloc.dart';
+import 'package:foxlearn_pos/custom_widgets/loading.dart';
 import 'package:foxlearn_pos/models/user/user.dart';
 import 'package:foxlearn_pos/provider/app_provider.dart';
 import 'package:foxlearn_pos/provider/bottom_nav_provider.dart';
@@ -23,7 +24,7 @@ class HomeScreenBuilder extends StatelessWidget {
       builder: (_, data, __) {
         if (data.item1)
           return Scaffold(
-            body: Center(child: CircularProgressIndicator()),
+            body: Center(child: Loading()),
           );
         else if (data.item2 != null) return FailureScreen();
         return InitNotificationsService(

@@ -2,7 +2,7 @@
 
 import 'package:foxlearn_pos/models/code/code.dart';
 import 'package:foxlearn_pos/models/invoice/invoice.dart';
-import 'package:foxlearn_pos/models/notification/notification.dart';
+import 'package:foxlearn_pos/models/notification/notification_model.dart';
 import 'package:foxlearn_pos/models/package/package.dart';
 import 'package:foxlearn_pos/models/user/user.dart';
 
@@ -26,5 +26,5 @@ abstract class ApiRepository {
 
   Future<ApiResult<List<Invoice>>> getPosInvoices(int posId);
 
-  Future<ApiResult<List<List<NotificationModel>>>> getNotifications();
+  Future<ApiResult<List<Item1>>> getNotifications();
 }

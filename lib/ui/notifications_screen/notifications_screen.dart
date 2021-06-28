@@ -4,7 +4,7 @@ import 'package:foxlearn_pos/const/padding.dart';
 import 'package:foxlearn_pos/const/strings.dart';
 import 'package:foxlearn_pos/custom_widgets/empty.dart';
 import 'package:foxlearn_pos/custom_widgets/space_box.dart';
-import 'package:foxlearn_pos/models/notification/notification.dart';
+import 'package:foxlearn_pos/models/notification/notification_model.dart';
 import 'package:foxlearn_pos/provider/app_provider.dart';
 import 'package:foxlearn_pos/services/navigator.dart';
 import 'package:provider/provider.dart';
@@ -19,14 +19,12 @@ class NotificationsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Selector<AppProvider,
-            Tuple2<List<NotificationModel>, List<NotificationModel>>>(
-          selector: (_, provider) =>
-              Tuple2(provider.todayNotifications, provider.oldNotification),
+        child: Selector<AppProvider, List<Item1>>(
+          selector: (_, provider) => provider.todayNotifications,
           builder: (_, data, __) => Padding(
             padding: const EdgeInsets.symmetric(),
             child: Visibility(
-              visible: data.item1.isNotEmpty || data.item2.isNotEmpty,
+              visible: data.isNotEmpty,
               replacement: Center(
                 child: EmptyWidget(
                   type2: true,
@@ -42,7 +40,7 @@ class NotificationsScreen extends StatelessWidget {
                       padding:
                           const EdgeInsets.symmetric(horizontal: AppPadding.p8),
                       child: Visibility(
-                        visible: data.item1.isNotEmpty,
+                        visible: data.isNotEmpty,
                         child: Column(
                           children: [
                             Padding(
@@ -50,14 +48,14 @@ class NotificationsScreen extends StatelessWidget {
                                   horizontal: AppPadding.p32),
                               child: _buildTitleWithCount(
                                   AppStrings.TODAY_NOTIFICATIONS,
-                                  data.item1.length.toString()),
+                                  data.length.toString()),
                             ),
                             NotificationsList(
                               scrollable: false,
                               old: false,
-                              notifications: data.item1,
+                              notifications: data,
                               onTapMore: () =>
-                                  _seeMoreToday(context, data.item1, false),
+                                  _seeMoreToday(context, data, false),
                             ),
                             SpaceBox(
                               height: 16,
@@ -66,22 +64,7 @@ class NotificationsScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: AppPadding.p32),
-                      child: _buildTitleWithCount(AppStrings.OLD_NOTIFICATIONS,
-                          data.item2.length.toString()),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: AppPadding.p8),
-                      child: NotificationsList(
-                        scrollable: false,
-                        old: true,
-                        notifications: data.item2,
-                        onTapMore: () => _seeMoreOld(context, data.item2, true),
-                      ),
-                    ),
+
                   ],
                 ),
               ),
@@ -105,7 +88,7 @@ class NotificationsScreen extends StatelessWidget {
   }
 
   _seeMoreToday(
-      BuildContext context, List<NotificationModel> notifications, bool old) {
+      BuildContext context, List<Item1> notifications, bool old) {
     AppNavigator.push(
         context,
         MoreNotificationsScreen(
@@ -116,7 +99,7 @@ class NotificationsScreen extends StatelessWidget {
   }
 
   _seeMoreOld(
-      BuildContext context, List<NotificationModel> notifications, bool old) {
+      BuildContext context, List<Item1> notifications, bool old) {
     AppNavigator.push(
         context,
         MoreNotificationsScreen(

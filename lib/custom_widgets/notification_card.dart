@@ -5,13 +5,13 @@ import 'package:foxlearn_pos/app_theme/text_styles.dart';
 import 'package:foxlearn_pos/const/padding.dart';
 import 'package:foxlearn_pos/custom_widgets/custom_neumorphic.dart';
 import 'package:foxlearn_pos/custom_widgets/space_box.dart';
-import 'package:foxlearn_pos/models/notification/notification.dart';
+import 'package:foxlearn_pos/models/notification/notification_model.dart';
 import 'package:foxlearn_pos/services/screen.dart';
 import 'package:intl/intl.dart' as intl;
 
 
 class NotificationCard extends StatelessWidget {
-  final NotificationModel? notification;
+  final Item1? notification;
   final VoidCallback? onTap;
   final bool? old;
 

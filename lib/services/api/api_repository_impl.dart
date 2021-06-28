@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:foxlearn_pos/models/code/code.dart';
 import 'package:foxlearn_pos/models/invoice/invoice.dart';
-import 'package:foxlearn_pos/models/notification/notification.dart';
+import 'package:foxlearn_pos/models/notification/notification_model.dart';
 import 'package:foxlearn_pos/models/package/package.dart';
 import 'package:foxlearn_pos/models/user/user.dart';
 import 'package:foxlearn_pos/services/api/api_routes.dart';
@@ -146,18 +146,13 @@ class ApiRepositoryImpl extends ApiRepository {
   }
 
   @override
-  Future<ApiResult<List<List<NotificationModel>>>> getNotifications() async {
+  Future<ApiResult<List<Item1>>> getNotifications() async {
     try {
-      final response = await dioClient.get(ApiRoutes.GET_ALL_NOTIFICATION,
-          queryParameters: {'type': 1}, auth: true);
-      List<List<NotificationModel>> notifications = [];
-      final List todayNotifications = response['notificationsToday'];
-      final List oldNotifications = response['pastNotifications'];
-      notifications.add(todayNotifications
-          .map((e) => NotificationModel.fromJson(e))
-          .toList());
-      notifications.add(
-          oldNotifications.map((e) => NotificationModel.fromJson(e)).toList());
+      final response = await dioClient.get(ApiRoutes.GET_ALL_NOTIFICATION,auth: true);
+      List<Item1> notifications = [];
+      final List todayNotifications = response['item1'];
+      todayNotifications.forEach((element) {notifications.add(Item1.fromJson(element)); });
+
       return ApiResult.success(data: notifications);
     } catch (e) {
       return ApiResult.failure(error: NetworkExceptions.getDioException(e)!);

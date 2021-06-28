@@ -58,7 +58,7 @@ class AppStrings {
   static const SHOW_PACKAGE_DETAILS = 'عرض تفاصيل الحزمة';
 
   //NOTIFICATIONS SCREEN-> CONST STRINGS
-  static const TODAY_NOTIFICATIONS = 'إشعارات اليوم';
+  static const TODAY_NOTIFICATIONS = 'أخر الأشعارات ';
   static const OLD_NOTIFICATIONS = 'الإشعارات القديمة';
   static const EMPTY_NOTIFICATIONS_LIST = 'لا يوجد إشعارات';
   //SETTING SCREEN-> CONST STRINGS

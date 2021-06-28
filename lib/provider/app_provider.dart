@@ -5,7 +5,7 @@ import 'package:foxlearn_pos/bloc/requests/requests_bloc.dart';
 import 'package:foxlearn_pos/const/strings.dart';
 import 'package:foxlearn_pos/models/code/code.dart';
 import 'package:foxlearn_pos/models/invoice/invoice.dart';
-import 'package:foxlearn_pos/models/notification/notification.dart';
+import 'package:foxlearn_pos/models/notification/notification_model.dart';
 import 'package:foxlearn_pos/models/package/package.dart';
 import 'package:foxlearn_pos/models/user/user.dart';
 import 'package:foxlearn_pos/services/api/api_repository_impl.dart';
@@ -24,8 +24,7 @@ class AppProvider extends ChangeNotifier {
   List<Package> _normalPackages = [];
   List<Package> _offersPackages = [];
   List<Package> _fastPackages = [];
-  List<NotificationModel> _todayNotifications = [];
-  List<NotificationModel> _oldNotification = [];
+  List<Item1> _todayNotifications = [];
   List<Invoice> _invoices = [];
   bool _loading = false;
   AuthBloc _authBloc;
@@ -51,9 +50,8 @@ class AppProvider extends ChangeNotifier {
 
   List<Code> get codesList => _codesList;
 
-  List<NotificationModel> get oldNotification => _oldNotification;
 
-  List<NotificationModel> get todayNotifications => _todayNotifications;
+  List<Item1> get todayNotifications => _todayNotifications;
 
   List<Invoice> get invoices => _invoices;
 
@@ -89,12 +87,9 @@ class AppProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  set oldNotification(List<NotificationModel> value) {
-    _oldNotification = value;
-    notifyListeners();
-  }
 
-  set todayNotifications(List<NotificationModel> value) {
+
+  set todayNotifications(List<Item1> value) {
     _todayNotifications = value;
     notifyListeners();
   }
@@ -193,7 +188,7 @@ class AppProvider extends ChangeNotifier {
     handleCodesApiResult(result[1] as ApiResult<List<Code>>);
     handlePackageApiResult(result[2] as ApiResult<List<Package>>);
     handleNotificationsApiResult(
-        result[3] as ApiResult<List<List<NotificationModel>>>);
+        result[3] as ApiResult<List<Item1>> );
     handleInvoicesApiResult(result[4] as ApiResult<List<Invoice>>);
     _setFastGeneratePackage();
 
@@ -229,9 +224,9 @@ class AppProvider extends ChangeNotifier {
     return apiResult;
   }
 
-  Future<ApiResult<List<List<NotificationModel>>>> getNotifications(
+  Future<ApiResult<List<Item1>>> getNotifications(
       int? userId) async {
-    ApiResult<List<List<NotificationModel>>> apiResult =
+    ApiResult<List<Item1>> apiResult =
         await _apiRepository.getNotifications();
     return apiResult;
   }
@@ -271,12 +266,11 @@ class AppProvider extends ChangeNotifier {
   }
 
   handleNotificationsApiResult(
-      ApiResult<List<List<NotificationModel>>> apiResult) {
+      ApiResult<List<Item1>> apiResult) {
     apiResult.maybeWhen(
       orElse: () {},
-      success: (List<List<NotificationModel>> notifications) {
-        todayNotifications = notifications[0];
-        oldNotification = notifications[1];
+      success: (List<Item1> notifications) {
+        todayNotifications = notifications;
       },
     );
   }

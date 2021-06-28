@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:foxlearn_pos/app_theme/text_styles.dart';
 import 'package:foxlearn_pos/custom_widgets/back_button.dart';
 import 'package:foxlearn_pos/custom_widgets/space_box.dart';
-import 'package:foxlearn_pos/models/notification/notification.dart';
+import 'package:foxlearn_pos/models/notification/notification_model.dart';
 
 import 'notification_circle.dart';
 import 'notifications_list.dart';
 
 class MoreNotificationsScreen extends StatelessWidget {
   final String? title;
-  final List<NotificationModel>? notifications;
+  final List<Item1>? notifications;
   final bool? old;
 
   const MoreNotificationsScreen(

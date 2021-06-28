@@ -4,6 +4,7 @@ import 'package:foxlearn_pos/app_theme/text_styles.dart';
 import 'package:foxlearn_pos/const/padding.dart';
 import 'package:foxlearn_pos/const/strings.dart';
 import 'package:foxlearn_pos/custom_widgets/custom_flat_button.dart';
+import 'package:foxlearn_pos/custom_widgets/loading.dart';
 import 'package:foxlearn_pos/services/screen.dart';
 
 
@@ -31,7 +32,7 @@ class LoadingDialog extends StatelessWidget {
                 children: [
                   Text(loadingMessage!, style: AppTextStyles.medium().copyWith(fontWeight: FontWeight.w600)),
                   SizedBox(height: Screen.height(16)),
-                  CircularProgressIndicator()
+                  Loading(),
                 ],
               ),
             ),

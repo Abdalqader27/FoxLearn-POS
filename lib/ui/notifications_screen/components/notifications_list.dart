@@ -5,7 +5,7 @@ import 'package:foxlearn_pos/const/padding.dart';
 import 'package:foxlearn_pos/const/strings.dart';
 import 'package:foxlearn_pos/custom_widgets/custom_flat_button.dart';
 import 'package:foxlearn_pos/custom_widgets/notification_card.dart';
-import 'package:foxlearn_pos/models/notification/notification.dart';
+import 'package:foxlearn_pos/models/notification/notification_model.dart';
 import 'package:foxlearn_pos/services/navigator.dart';
 
 
@@ -14,7 +14,7 @@ import '../../notification_info_screen.dart';
 class NotificationsList extends StatelessWidget {
   final bool scrollable;
   final VoidCallback? onTapMore;
-  final List<NotificationModel>? notifications;
+  final List<Item1>? notifications;
   final bool all;
   final bool? old;
 

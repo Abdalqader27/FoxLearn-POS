@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'custom_widgets/loading.dart';
 import 'my_app.dart';
 
 Future<void> main() async {
@@ -20,7 +21,7 @@ Future<void> main() async {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done)
           return DevicePreview(enabled: false, builder: (context) => MyApp());
-        return CircularProgressIndicator();
+        return Loading();
       },
     ),
   );

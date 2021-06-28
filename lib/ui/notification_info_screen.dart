@@ -7,13 +7,13 @@ import 'package:foxlearn_pos/const/strings.dart';
 import 'package:foxlearn_pos/custom_widgets/back_button.dart';
 import 'package:foxlearn_pos/custom_widgets/custom_neumorphic.dart';
 import 'package:foxlearn_pos/custom_widgets/space_box.dart';
-import 'package:foxlearn_pos/models/notification/notification.dart';
+import 'package:foxlearn_pos/models/notification/notification_model.dart';
 import 'package:foxlearn_pos/services/screen.dart';
 import 'package:intl/intl.dart';
 
 
 class NotificationInfoScreen extends StatelessWidget {
-  final NotificationModel? notificationModel;
+  final Item1? notificationModel;
 
   const NotificationInfoScreen({Key? key, this.notificationModel})
       : super(key: key);
