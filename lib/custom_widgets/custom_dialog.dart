@@ -27,13 +27,16 @@ class LoadingDialog extends StatelessWidget {
               decoration: BoxDecoration(color: Theme.of(context).scaffoldBackgroundColor, borderRadius: BorderRadius.all(Radius.circular(15))),
               margin: const EdgeInsets.all(AppPadding.p32),
               padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(loadingMessage!, style: AppTextStyles.medium().copyWith(fontWeight: FontWeight.w600)),
-                  SizedBox(height: Screen.height(16)),
-                  Loading(),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(loadingMessage!, style: AppTextStyles.medium().copyWith(fontWeight: FontWeight.w600)),
+                    SizedBox(height: Screen.height(16)),
+                    Flexible(child: Loading()),
+                  ],
+                ),
               ),
             ),
           ),
